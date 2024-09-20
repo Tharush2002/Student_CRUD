@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content {
+    position: relative;
+    left: 4.5rem;
+    width: calc(100vw - 4.5rem);
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+    letter-spacing: 5px;
+    word-spacing: 25px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+#divider {
+    width: 0.3rem;
+    background-color: rgb(175, 175, 175);
+}
+
+/* ABOVE LG BREAKPOINT */
+@media (min-width: 768px) {
+    #profilePic {
+        width: 30%;
+    }
+
+    #profileContent {
+        width: 60%;
+    }
+
+    .content {
+        padding: 2rem;
+    }
+}
+
+/* BELOW LG BREAKPOINT */
+@media (max-width: 768px) {
+
+    #profilePic,
+    #profileContent {
+        width: 95%;
+    }
+
+    .content {
+        padding: 1.3rem;
+    }
+}
+
+#inputFile {
+    font-size: smaller;
+    text-align: center;
+    max-width: 95%;
+    margin-top: 1.5rem;
+}
+
+#formTitle {
+    color: rgb(81, 81, 81);
+    text-align: center;
+}
+
+
+input:invalid {
+    border-color: red;
+    border-width: 2px;
+}
+
+input:valid {
+    border-color: limegreen;
+    border-width: 2px;
+}
+
+#profilePictureContainer {
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profilePicture{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    object-fit: cover;
+}
+
+#update-contact-container{
+    z-index: 0;
+    position: relative;
+    visibility: hidden;
+}
+
+#loadingScreen{
+    background: rgba(0 ,0 ,0 , 0.8);
+    z-index: 1;
+    height: 100vh;
+    width: calc(100vw - 4.5rem);
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tableBody tr:hover {
+    cursor: pointer;
+}
