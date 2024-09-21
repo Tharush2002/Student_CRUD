@@ -1,4 +1,4 @@
-const maxFileSize = 3 * 1024 * 1024;
+const maxFileSize = 2 * 1024 * 1024;
 let toggle = true;
 let studentsData = [];
 let selectedStudent = null;
@@ -28,8 +28,10 @@ document.addEventListener('click', () => {
 
             if (file) {
                 if (file.size > maxFileSize) {
-                    errorMessage.innerText = "File size exceeds 2 MB"
+                    errorMessage.innerText = `Selected file size exceeded ${maxFileSize/(1024*1024)} MB`;
+                    document.getElementById('file-input').value = "";
                 } else {
+                    errorMessage.innerText = "";
                     const reader = new FileReader();
                     reader.onload = function (event) {
                         profilePicture.src = event.target.result;
